@@ -1,0 +1,83 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.video-container {
+	position: relative;
+	max-height: 65rem;
+	overflow: hidden;
+
+	.overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: rgb(0, 2, 80);
+		background: linear-gradient(270deg, rgba(0, 2, 80, 0.3) 0%, rgba(92, 0, 99, 0.5) 72%);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	video {
+		width: 100%;
+		display: block;
+		object-fit: cover;
+	}
+}
+
+.video-content {
+	@include m.desktopXLSize {
+		position: absolute;
+		left: 2rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+		color: v.$white;
+		margin: 0;
+		text-shadow: v.$textShadow;
+
+		@include m.phoneSize {
+			font-size: 4rem;
+			color: v.$white;
+		}
+
+		@include m.tabletSize {
+			font-size: 6rem;
+			color: v.$white;
+		}
+
+		@include m.desktopSize {
+			font-size: 8rem;
+			color: v.$white;
+		}
+	}
+
+	p {
+		font-size: 1.5rem;
+		color: v.$white;
+		background-color: v.$purple;
+		display: inline-block;
+		margin: 0;
+		text-shadow: v.$textShadow;
+
+		@include m.phoneXSSize {
+			padding: 1rem;
+		}
+
+		@include m.phoneSize {
+			font-size: 2rem;
+			color: v.$white;
+		}
+
+		@include m.tabletSize {
+			font-size: 3rem;
+			color: v.$white;
+		}
+
+		@include m.desktopSize {
+			font-size: 4rem;
+			color: v.$white;
+		}
+	}
+}

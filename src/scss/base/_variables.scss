@@ -1,10 +1,23 @@
-// Fonts
-$mainFont: 'Montserrat';
+//? Fonts
+$titleFont: "Festive", cursive;
+$mainFont: "Fira Sans", sans-serif;
 
-// Temporal project colors
-$green: #4CB8B3;
-$pink: #F53756;
-$yellow: #FEF46D;
-$purple: #752F97;
-$dark: #222;
-$white: #FFF;
+//? Temporal project colors
+$darkBlue: hsl(246, 97%, 12%);
+$yellow: hsl(56, 99%, 71%);
+$purple: hsla(280, 81%, 24%, 0.9);
+$dark: hsl(0, 0%, 13%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+
+//? Screen sizes
+$phoneXS: 360px;
+$phone: 480px;
+$tablet: 768px;
+$desktop: 992px;
+$desktopXL: 1200px;
+$desktopXXL: 1920px;
+
+//? Text shadows
+$logoTextShadow: 0 0 0.5rem #000;
+$textShadow: 0 0 0.2rem #000;

@@ -1,5 +1,11 @@
 @use "variables" as v;
 
+@mixin phoneXSSize {
+	@media (min-width: v.$phoneXS) {
+		@content;
+	}
+}
+
 @mixin phoneSize {
 	@media (min-width: v.$phone) {
 		@content;
@@ -22,4 +28,16 @@
 	@media (min-width: v.$desktopXL) {
 		@content;
 	}
+}
+
+@mixin desktopXXLSize {
+	@media (min-width: v.$desktopXXL) {
+		@content;
+	}
+}
+
+@mixin gridColumns($gridColumns: 2, $columnGap: 10rem) {
+	display: grid;
+	grid-template-columns: repeat($gridColumns, 1fr);
+	column-gap: 10rem;
 }

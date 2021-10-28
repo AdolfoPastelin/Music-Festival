@@ -8,6 +8,7 @@ const plumber = require('gulp-plumber')
 const cache = require('gulp-cache')
 const imagemin = require('gulp-imagemin')
 const webp = require('gulp-webp')
+const avif = require('gulp-avif')
 
 //* Gulp functions
 
@@ -37,6 +38,17 @@ function webpVersion(done) {
 	done()
 }
 
+function avifVersion(done) {
+	const options = {
+		quality: 50 // quality from 0 to 100 available
+	}
+
+	src('src/img/**/*.{png,jpg}')
+		.pipe(avif(options)) //take the value from the object prop 'quality'
+		.pipe(dest('build/img'))
+	done()
+}
+
 function minifyImages(done) {
 	const options = {
 		optimizationLevel: 3 //options in gulp package documentation
@@ -50,5 +62,5 @@ function minifyImages(done) {
 
 // run the functions with gulp + functionName
 exports.css = css
-exports.img = parallel(minifyImages, webpVersion)
+exports.img = parallel(minifyImages, webpVersion, avifVersion)
 exports.dev = parallel(css, dev)

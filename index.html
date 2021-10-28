@@ -6,7 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/x-icon" href="src/img/favicon.ico">
-	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -21,7 +20,9 @@
 
 	<header class="header">
 		<div class="container header-content">
-			<h1>Music Festival</h1>
+			<a href="index.html">
+				<h1>Music Festival</h1>
+			</a>
 
 			<nav class="principal-navigation">
 				<a href="#">Line up</a>
@@ -40,9 +41,9 @@
 				</div>
 			</div>
 			<video autoplay muted loop>
-				<source src="src/video/concert.mp4" type="video/mp4">
-				<source src="src/video/concert.ogv" type="video/ogv">
 				<source src="src/video/concert.webm" type="video/webm">
+				<source src="src/video/concert.ogv" type="video/ogv">
+				<source src="src/video/concert.mp4" type="video/mp4">
 			</video>
 		</section>
 
@@ -60,7 +61,12 @@
 			</div>
 
 			<div class="image">
-				<img src="src/img/guitarist-image.jpg" alt="Guitarist image in a festival">
+				<picture>
+					<source srcset="build/img/guitarist-image.avif" type="image/avif">
+					<source srcset="build/img/guitarist-image.webp" type="image/webp">
+					<img loading="lazy" width="400" height="400" src="src/img/guitarist-image.jpg"
+						alt="Guitarist image in a festival">
+				</picture>
 			</div>
 
 			<div class="festival-content">
@@ -76,7 +82,11 @@
 			</div>
 
 			<div class="image">
-				<img src="src/img/dj1.jpg" alt="DJ image in a festival">
+				<picture>
+					<source srcset="build/img/dj1.avif" type="image/avif">
+					<source srcset="build/img/dj1.webp" type="image/webp">
+					<img loading="lazy" width="400" height="400" src="src/img/dj1.jpg" alt="DJ image in a festival">
+				</picture>
 			</div>
 		</section>
 

@@ -21,9 +21,16 @@ function css(done) {
 	done()
 }
 
-/* Add the --watch flag and executes css gulp function */
+function js(done) {
+	src('src/js/**/*.js')
+		.pipe(dest('build/js'))
+	done()
+}
+
+/* Add the --watch flag and executes css and js gulp functions */
 function dev(done) {
 	watch('src/scss/**/*.scss', css)
+	watch('src/js/**/*.js', js)
 	done()
 }
 
@@ -62,5 +69,6 @@ function minifyImages(done) {
 
 // run the functions with gulp + functionName
 exports.css = css
+exports.js = js
 exports.img = parallel(minifyImages, webpVersion, avifVersion)
-exports.dev = parallel(css, dev)
+exports.dev = parallel(css, js, dev)

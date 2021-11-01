@@ -9,6 +9,7 @@ const cache = require('gulp-cache')
 const imagemin = require('gulp-imagemin')
 const webp = require('gulp-webp')
 const avif = require('gulp-avif')
+const resize = require('gulp-image-resize')
 
 //* Gulp functions
 
@@ -67,8 +68,23 @@ function minifyImages(done) {
 	done()
 }
 
+function resizeImages(done) {
+	const options = {
+		width: 200,
+		height: 133,
+		crop: true,
+		upscale: false
+	}
+
+	src('src/img/large/**/*.{jpg,png}')
+		.pipe(resize(options))
+		.pipe(dest('build/img/thumb'))
+	done()
+}
+
 // run the functions with gulp + functionName
 exports.css = css
 exports.js = js
+exports.resizeImages = resizeImages
 exports.img = parallel(minifyImages, webpVersion, avifVersion)
 exports.dev = parallel(css, js, dev)

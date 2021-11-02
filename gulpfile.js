@@ -37,7 +37,7 @@ function dev(done) {
 
 function webpVersion(done) {
 	const options = {
-		quality: 50 // quality from 0 to 100 available
+		quality: 90 // quality from 0 to 100 available
 	}
 
 	src('src/img/**/*.{png,jpg}')
@@ -48,7 +48,7 @@ function webpVersion(done) {
 
 function avifVersion(done) {
 	const options = {
-		quality: 50 // quality from 0 to 100 available
+		quality: 90 // quality from 0 to 100 available
 	}
 
 	src('src/img/**/*.{png,jpg}')
@@ -59,7 +59,7 @@ function avifVersion(done) {
 
 function minifyImages(done) {
 	const options = {
-		optimizationLevel: 3 //options in gulp package documentation
+		optimizationLevel: 3 //options available 0 - 7
 	}
 
 	src('src/img/**/*.{png,jpg}')
@@ -70,8 +70,8 @@ function minifyImages(done) {
 
 function resizeImages(done) {
 	const options = {
-		width: 200,
-		height: 133
+		width: 350,
+		height: 250
 	}
 
 	src('src/img/large/**/*.{jpg,png}')

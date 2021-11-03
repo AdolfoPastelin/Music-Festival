@@ -7,7 +7,8 @@
 	}
 
 	@include m.desktopSize {
-		@include m.gridColumns;
+		@include m.gridColumns($gap: 5rem);
+		column-gap: 10rem;
 	}
 
 	.image {

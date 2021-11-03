@@ -1,0 +1,72 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.tickets {
+	padding: 5rem 0;
+
+	h3 {
+		text-align: center;
+	}
+
+	.ticket-container {
+		margin-bottom: 5rem;
+
+		@include m.tabletSize {
+			@include m.gridColumns($gap: 10rem);
+		}
+	}
+}
+
+.package {
+	color: v.$black;
+
+	.package-title {
+		font-size: 2.3rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 1.5rem;
+		margin: 0;
+	}
+
+	&-header p {
+		font-size: 1.6rem;
+		padding: 1rem 0;
+		margin: 0;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+		background-color: darken($color: v.$purple, $amount: 5);
+		color: v.$white;
+	}
+
+	&-footer p {
+		font-size: 2rem;
+		padding: 1rem 0;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bolder;
+		background-color: v.$darkBlue;
+		color: v.$white;
+		margin: 0;
+		letter-spacing: 0.1rem;
+	}
+
+	&-body {
+		ul {
+			@include m.resetList;
+
+			li,
+			:nth-child(odd) {
+				padding: 1.5rem 2rem;
+				border-bottom: 1px solid #e1e1e1;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.shadow {
+	box-shadow: rgb(38, 57, 77) 0px 11.5px 30px -10px;
+	margin-bottom: 7rem;
+}

@@ -36,10 +36,10 @@
 	}
 }
 
-@mixin gridColumns($gridColumns: 2, $columnGap: 10rem) {
+@mixin gridColumns($gridColumns: 2, $gap: 5rem) {
 	display: grid;
 	grid-template-columns: repeat($gridColumns, 1fr);
-	column-gap: 10rem;
+	gap: $gap;
 }
 
 @mixin resetList {

@@ -3,7 +3,7 @@
 
 .footer {
 	padding: 2.5rem;
-	background-color: v.$darkBlue;
+	background-color: darken($color: v.$darkBlue, $amount: 3);
 	display: grid;
 	place-items: center;
 

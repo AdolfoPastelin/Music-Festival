@@ -95,6 +95,11 @@
 		margin: 0 auto;
 		max-width: 80%;
 		text-align: right;
+		border-bottom: 1px solid #e1e1e1;
+
+		&:last-child {
+			border-bottom: none;
+		}
 
 		@include m.phoneSize {
 			max-width: 60%;

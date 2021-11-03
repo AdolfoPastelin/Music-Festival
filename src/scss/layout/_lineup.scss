@@ -29,7 +29,7 @@
 	margin-bottom: 5rem;
 
 	@include m.tabletSize {
-		@include m.gridColumns(2, 5rem);
+		@include m.gridColumns($gap: 10rem);
 	}
 
 	.escenary {
@@ -70,10 +70,9 @@
 }
 
 .calendary {
-	margin: 0;
-	padding: 0;
-	list-style: none;
 	font-size: 1.8rem;
+
+	@include m.resetList;
 
 	@include m.phoneSize {
 		font-size: 1.9rem;

@@ -3,7 +3,41 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function initApp() {
+	fixedNavigation()
 	createGallery()
+	scrollNav()
+}
+
+function fixedNavigation() {
+	const bar = document.querySelector('.header')
+	const aboutFestival = document.querySelector('.about-festival')
+	const body = document.querySelector('body')
+
+	window.addEventListener('scroll', () => {
+		if (aboutFestival.getBoundingClientRect().bottom < 0) {
+			bar.classList.add('fixed')
+			body.classList.add('scroll-body')
+		} else {
+			bar.classList.remove('fixed')
+			body.classList.remove('scroll-body')
+		}
+	})
+}
+
+function scrollNav() {
+	const links = document.querySelectorAll('.principal-navigation a')
+
+	links.forEach(link => {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+
+			const scrollSection = e.target.attributes.href.value
+			const section = document.querySelector(scrollSection)
+
+			//Using scrollIntoView API
+			section.scrollIntoView({ alignToTop: true, behavior: "smooth" })
+		})
+	})
 }
 
 function createGallery() {

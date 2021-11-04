@@ -18,6 +18,10 @@ body {
 	&.fixBody {
 		overflow: hidden;
 	}
+
+	&.scroll-body {
+		padding-top: 10.7rem;
+	}
 }
 
 h1 {

@@ -352,6 +352,12 @@ body {
   font-size: 1.6rem;
   font-family: "Fira Sans", sans-serif;
 }
+body.fixBody {
+  overflow: hidden;
+}
+body.scroll-body {
+  padding-top: 10.7rem;
+}
 
 h1 {
   font-family: "Festive", cursive;
@@ -399,6 +405,13 @@ img {
 .header {
   background-color: #07013c;
 }
+.header.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
+}
 .header h1 {
   color: white;
   text-align: center;
@@ -411,6 +424,7 @@ img {
 }
 .header .header-content {
   padding: 2rem;
+  /* TODO: Hamburger menu for small devices */
 }
 @media (min-width: 768px) {
   .header .header-content {
@@ -544,6 +558,7 @@ img {
   .about-festival {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
     column-gap: 10rem;
   }
 }
@@ -626,7 +641,7 @@ img {
   .escenary-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 10rem;
+    gap: 10rem;
   }
 }
 .escenary-container .escenary {
@@ -668,10 +683,10 @@ img {
 }
 
 .calendary {
+  font-size: 1.8rem;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 1.8rem;
 }
 @media (min-width: 480px) {
   .calendary {
@@ -697,6 +712,10 @@ img {
   margin: 0 auto;
   max-width: 80%;
   text-align: right;
+  border-bottom: 1px solid #e1e1e1;
+}
+.calendary li:last-child {
+  border-bottom: none;
 }
 @media (min-width: 480px) {
   .calendary li {
@@ -715,4 +734,236 @@ img {
 }
 .calendary li span {
   font-weight: 400;
+}
+
+.gallery {
+  padding: 4rem 0;
+  margin-bottom: 5rem;
+}
+.gallery h3 {
+  text-align: center;
+}
+
+.gallery-images {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+@media (min-width: 480px) {
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+@media (min-width: 768px) {
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+  }
+}
+@media (min-width: 992px) {
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.overlay picture {
+  display: block;
+  max-width: 105rem;
+}
+
+.closeBtn {
+  height: 5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+  background: #e62222;
+  position: relative;
+  width: 15rem;
+  bottom: 70%;
+}
+@media (min-width: 480px) {
+  .closeBtn {
+    bottom: 60%;
+  }
+}
+@media (min-width: 768px) {
+  .closeBtn {
+    bottom: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .closeBtn {
+    bottom: 40%;
+  }
+}
+.closeBtn .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+}
+.closeBtn .icon {
+  position: absolute;
+  border-left: 1px solid #990f0f;
+  transform: translateX(10.4rem);
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.closeBtn svg {
+  width: 1.5rem;
+  fill: #eee;
+}
+.closeBtn:hover {
+  background: #ff3636;
+}
+.closeBtn:hover .text {
+  color: transparent;
+}
+.closeBtn:hover .icon {
+  width: 15rem;
+  border-left: none;
+  transform: translateX(-0.3rem);
+}
+.closeBtn:focus {
+  outline: none;
+}
+.closeBtn:active .icon svg {
+  transform: scale(0.8);
+}
+
+.closeBtn,
+.closeBtn span {
+  transition: 200ms;
+}
+
+.tickets {
+  padding: 5rem 0;
+}
+.tickets h3 {
+  text-align: center;
+}
+.tickets .ticket-container {
+  margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .tickets .ticket-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10rem;
+  }
+}
+
+.package {
+  color: black;
+}
+.package .package-title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+  margin: 0;
+}
+.package-header p {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: rgba(62, 10, 88, 0.902);
+  color: white;
+}
+.package-footer p {
+  font-size: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  background-color: #07013c;
+  color: white;
+  margin: 0;
+  letter-spacing: 0.1rem;
+}
+.package-body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.package-body ul li,
+.package-body ul :nth-child(odd) {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e1e1e1;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.shadow {
+  box-shadow: #26394d 0px 11.5px 30px -10px;
+  margin-bottom: 7rem;
+}
+
+.footer {
+  padding: 2.5rem;
+  background-color: #05012d;
+  display: grid;
+  place-items: center;
+}
+@media (min-width: 768px) {
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10rem;
+    place-items: center;
+  }
+}
+.footer .copyright p {
+  color: white;
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+.footer .policy-terms a {
+  color: white;
+  border-bottom: 1px solid white;
+}
+.footer .policy-terms a:hover {
+  color: rgba(179, 67, 235, 0.902);
+  border-bottom: 1px solid rgba(179, 67, 235, 0.902);
+}
+.footer .policy-terms li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: left;
 }

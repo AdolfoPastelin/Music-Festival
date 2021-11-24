@@ -356,9 +356,14 @@ body.fixBody {
   overflow: hidden;
 }
 body.scroll-body {
-  padding-top: 10.7rem;
+  padding-top: 27.5rem;
 }
 
+@media (min-width: 768px) {
+  body.scroll-body {
+    padding-top: 10.7rem;
+  }
+}
 h1 {
   font-family: "Festive", cursive;
   font-size: 5rem;
@@ -424,7 +429,6 @@ img {
 }
 .header .header-content {
   padding: 2rem;
-  /* TODO: Hamburger menu for small devices */
 }
 @media (min-width: 768px) {
   .header .header-content {

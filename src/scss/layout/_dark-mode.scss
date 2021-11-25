@@ -1,0 +1,11 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.dark-mode-body {
+	background-color: darken($color: v.$dark, $amount: 7);
+	color: v.$white;
+}
+
+.dark-mode-paragraph {
+	color: v.$white;
+}

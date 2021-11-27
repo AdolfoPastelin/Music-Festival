@@ -9,3 +9,55 @@
 .dark-mode-paragraph {
 	color: v.$white;
 }
+
+.dark-mode-date {
+	font-size: 2.2rem;
+	font-weight: bold;
+	color: lighten($color: v.$purple, $amount: 25);
+	margin-bottom: 2rem;
+
+	@include m.tabletSize {
+		font-size: 2.4rem;
+	}
+}
+
+.dark-mode-day {
+	color: lighten($color: v.$purple, $amount: 25);
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 5rem;
+
+	&:last-of-type {
+		margin-top: 10rem;
+	}
+}
+
+.dark-mode-stage-name {
+	font-size: 2.4rem;
+	color: v.$white;
+	font-weight: bolder;
+
+	@include m.phoneSize {
+		font-size: 2.5rem;
+	}
+
+	@include m.tabletSize {
+		font-size: 2.6rem;
+	}
+
+	@include m.desktopSize {
+		font-size: 2.7rem;
+	}
+}
+
+.dark-mode-package-title {
+	color: v.$white;
+}
+
+.dark-mode-package-item {
+	color: v.$white;
+
+	&:last-child {
+		border-bottom: none;
+	}
+}

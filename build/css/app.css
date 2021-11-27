@@ -416,6 +416,60 @@ img {
   color: white;
 }
 
+.dark-mode-date {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: rgba(159, 24, 226, 0.902);
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .dark-mode-date {
+    font-size: 2.4rem;
+  }
+}
+
+.dark-mode-day {
+  color: rgba(159, 24, 226, 0.902);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+.dark-mode-day:last-of-type {
+  margin-top: 10rem;
+}
+
+.dark-mode-stage-name {
+  font-size: 2.4rem;
+  color: white;
+  font-weight: bolder;
+}
+@media (min-width: 480px) {
+  .dark-mode-stage-name {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .dark-mode-stage-name {
+    font-size: 2.6rem;
+  }
+}
+@media (min-width: 992px) {
+  .dark-mode-stage-name {
+    font-size: 2.7rem;
+  }
+}
+
+.dark-mode-package-title {
+  color: white;
+}
+
+.dark-mode-package-item {
+  color: white;
+}
+.dark-mode-package-item:last-child {
+  border-bottom: none;
+}
+
 .header {
   background-color: #07013c;
 }
@@ -654,42 +708,42 @@ img {
   margin-top: 10rem;
 }
 
-.escenary-container {
+.stage-container {
   margin-bottom: 5rem;
 }
 @media (min-width: 768px) {
-  .escenary-container {
+  .stage-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10rem;
   }
 }
-.escenary-container .escenary {
+.stage-container .stage {
   margin-bottom: 7rem;
   padding: 3rem 0;
   box-shadow: #26394d 0px 11.5px 30px -10px;
 }
 @media (min-width: 768px) {
-  .escenary-container .escenary {
+  .stage-container .stage {
     margin-bottom: 1rem;
   }
 }
-.escenary-container .escenary-name {
+.stage-container .stage-name {
   font-weight: bolder;
   font-size: 2.4rem;
 }
 @media (min-width: 480px) {
-  .escenary-container .escenary-name {
+  .stage-container .stage-name {
     font-size: 2.5rem;
   }
 }
 @media (min-width: 768px) {
-  .escenary-container .escenary-name {
+  .stage-container .stage-name {
     font-size: 2.6rem;
   }
 }
 @media (min-width: 992px) {
-  .escenary-container .escenary-name {
+  .stage-container .stage-name {
     font-size: 2.7rem;
   }
 }
@@ -936,12 +990,14 @@ img {
   padding: 0;
   list-style: none;
 }
-.package-body ul li,
-.package-body ul :nth-child(odd) {
+.package-body ul li {
   padding: 1.5rem 2rem;
   border-bottom: 1px solid #e1e1e1;
   text-align: center;
   font-size: 1.8rem;
+}
+.package-body ul li:last-child {
+  border-bottom: none;
 }
 
 .shadow {

@@ -25,14 +25,14 @@
 	}
 }
 
-.escenary-container {
+.stage-container {
 	margin-bottom: 5rem;
 
 	@include m.tabletSize {
 		@include m.gridColumns($gap: 10rem);
 	}
 
-	.escenary {
+	.stage {
 		margin-bottom: 7rem;
 
 		@include m.tabletSize {
@@ -43,7 +43,7 @@
 		box-shadow: rgb(38, 57, 77) 0px 11.5px 30px -10px;
 	}
 
-	.escenary-name {
+	.stage-name {
 		font-weight: bolder;
 		font-size: 2.4rem;
 

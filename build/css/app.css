@@ -356,11 +356,14 @@ body.fixBody {
   overflow: hidden;
 }
 body.scroll-body {
+  padding-top: 10.7rem;
+}
+body.fixed-show {
   padding-top: 27.5rem;
 }
 
 @media (min-width: 768px) {
-  body.scroll-body {
+  body.fixed-show {
     padding-top: 10.7rem;
   }
 }
@@ -480,13 +483,11 @@ img {
   left: 0;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
 }
-.header h1 {
-  color: white;
-  text-align: center;
-  text-shadow: 0 0 0.5rem #000;
-  margin: 0;
-}
 .header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 2rem;
 }
 @media (min-width: 768px) {
@@ -494,27 +495,56 @@ img {
     display: flex;
     justify-content: space-between;
     padding: 2.5rem;
+    flex-wrap: nowrap;
+  }
+}
+.header .header-content h1 {
+  color: white;
+  text-shadow: 0 0 0.5rem #000;
+  margin: 0;
+  padding-top: 1rem;
+}
+.header .hamburger {
+  width: 4rem;
+  color: white;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .header .hamburger {
+    display: none;
   }
 }
 
 .principal-navigation {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: none;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .principal-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    width: auto;
+  }
 }
 @media (min-width: 768px) {
   .principal-navigation {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .principal-navigation {
     gap: 5rem;
   }
 }
 .principal-navigation .toggle-icon img {
   cursor: pointer;
-  max-width: 3rem;
-  width: 3rem;
+  max-width: 2.5rem;
+  width: 2.5rem;
 }
 .principal-navigation a {
   color: white;
@@ -536,6 +566,19 @@ img {
 }
 .principal-navigation a:hover {
   color: #fef46c;
+}
+
+.principal-navigation.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .principal-navigation.show {
+    flex-direction: row;
+  }
 }
 
 .video-container {

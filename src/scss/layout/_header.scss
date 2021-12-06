@@ -12,41 +12,66 @@
 		box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
 	}
 
-	h1 {
-		color: v.$white;
-		text-align: center;
-		text-shadow: v.$logoTextShadow;
-		margin: 0;
-	}
-
 	.header-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
 		padding: 2rem;
 
 		@include m.tabletSize {
 			display: flex;
 			justify-content: space-between;
 			padding: 2.5rem;
+			flex-wrap: nowrap;
+		}
+
+		h1 {
+			color: v.$white;
+			text-shadow: v.$logoTextShadow;
+			margin: 0;
+			padding-top: 1rem;
+		}
+	}
+
+	.hamburger {
+		width: 4rem;
+		color: v.$white;
+		cursor: pointer;
+
+		@include m.tabletSize {
+			display: none;
 		}
 	}
 }
 
 .principal-navigation {
-	margin-top: 1rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: none;
+	width: 100%;
+
+	@include m.tabletSize {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 1rem;
+		width: auto;
+	}
 
 	@include m.tabletSize {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		gap: 3rem;
+	}
+
+	@include m.desktopSize {
 		gap: 5rem;
 	}
 
 	.toggle-icon img {
 		cursor: pointer;
-		max-width: 3rem;
-		width: 3rem;
+		max-width: 2.5rem;
+		width: 2.5rem;
 	}
 
 	a {
@@ -68,5 +93,17 @@
 		&:hover {
 			color: v.$yellow;
 		}
+	}
+}
+
+.principal-navigation.show {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+
+	@include m.tabletSize {
+		flex-direction: row;
 	}
 }

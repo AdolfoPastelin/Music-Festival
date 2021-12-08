@@ -31,6 +31,11 @@
 			text-shadow: v.$logoTextShadow;
 			margin: 0;
 			padding-top: 1rem;
+			font-size: 3.8rem;
+
+			@include m.tabletSize {
+				font-size: 5rem;
+			}
 		}
 	}
 
@@ -51,16 +56,10 @@
 
 	@include m.tabletSize {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center;
 		margin-top: 1rem;
 		width: auto;
-	}
-
-	@include m.tabletSize {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
 		gap: 3rem;
 	}
 
@@ -83,10 +82,12 @@
 		text-shadow: v.$textShadow;
 
 		@include m.phoneXSSize {
-			font-size: 2.4rem;
+			font-size: 2rem;
+			margin-bottom: 1.2rem;
 		}
 
 		@include m.tabletSize {
+			font-size: 2.4rem;
 			margin-bottom: 0;
 		}
 

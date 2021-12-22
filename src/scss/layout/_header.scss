@@ -38,14 +38,60 @@
 			}
 		}
 	}
+}
 
-	.hamburger {
-		width: 4rem;
-		color: v.$white;
-		cursor: pointer;
+.hamburger {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 4rem;
+	height: 4rem;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
 
-		@include m.tabletSize {
-			display: none;
+	@include m.tabletSize {
+		display: none;
+	}
+
+	// Hamburger menu animation
+	&.open .burger-icon {
+		transform: translateX(-5rem);
+		background: transparent;
+
+		&::before {
+			transform: rotate(45deg) translate(3.5rem, -3.5rem);
+		}
+
+		&::after {
+			transform: rotate(-45deg) translate(3.5rem, 3.5rem);
+		}
+	}
+
+	// hamburger menu creation styles
+	.burger-icon {
+		width: 3.2rem;
+		height: 0.3rem;
+		background-color: v.$white;
+		border-radius: 0.5rem;
+		transition: all 0.2s ease-in-out;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 3.2rem;
+			height: 0.3rem;
+			background-color: v.$white;
+			border-radius: 0.5rem;
+			transition: all 0.2s ease-in-out;
+		}
+
+		&::before {
+			transform: translateY(-1rem);
+		}
+
+		&::after {
+			transform: translateY(1rem);
 		}
 	}
 }

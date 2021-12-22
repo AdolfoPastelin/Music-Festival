@@ -6,6 +6,11 @@
 
 	h3 {
 		text-align: center;
+		font-size: 4rem;
+
+		@include m.tabletSize {
+			font-size: 4.2rem;
+		}
 	}
 
 	.ticket-container {

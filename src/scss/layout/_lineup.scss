@@ -5,7 +5,12 @@
 	padding: 5rem 0;
 
 	h3 {
+		font-size: 4rem;
 		margin-bottom: 5rem;
+
+		@include m.tabletSize {
+			font-size: 4.2rem;
+		}
 	}
 
 	h3,

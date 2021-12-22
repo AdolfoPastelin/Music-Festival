@@ -510,15 +510,52 @@ img {
     font-size: 5rem;
   }
 }
-.header .hamburger {
+
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4rem;
-  color: white;
+  height: 4rem;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  .header .hamburger {
+  .hamburger {
     display: none;
   }
+}
+.hamburger.open .burger-icon {
+  transform: translateX(-5rem);
+  background: transparent;
+}
+.hamburger.open .burger-icon::before {
+  transform: rotate(45deg) translate(3.5rem, -3.5rem);
+}
+.hamburger.open .burger-icon::after {
+  transform: rotate(-45deg) translate(3.5rem, 3.5rem);
+}
+.hamburger .burger-icon {
+  width: 3.2rem;
+  height: 0.3rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.hamburger .burger-icon::before, .hamburger .burger-icon::after {
+  content: "";
+  position: absolute;
+  width: 3.2rem;
+  height: 0.3rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.hamburger .burger-icon::before {
+  transform: translateY(-1rem);
+}
+.hamburger .burger-icon::after {
+  transform: translateY(1rem);
 }
 
 .principal-navigation {
@@ -709,7 +746,7 @@ img {
 .festival-content h2 {
   margin-bottom: 0;
   font-weight: bolder;
-  font-size: 4rem;
+  font-size: 3.8rem;
 }
 @media (min-width: 768px) {
   .festival-content h2 {
@@ -736,7 +773,13 @@ img {
   padding: 5rem 0;
 }
 .lineup h3 {
+  font-size: 4rem;
   margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .lineup h3 {
+    font-size: 4.2rem;
+  }
 }
 .lineup h3,
 .lineup p {
@@ -860,6 +903,12 @@ img {
 }
 .gallery h3 {
   text-align: center;
+  font-size: 4rem;
+}
+@media (min-width: 768px) {
+  .gallery h3 {
+    font-size: 4.2rem;
+  }
 }
 
 .gallery-images {
@@ -985,6 +1034,12 @@ img {
 }
 .tickets h3 {
   text-align: center;
+  font-size: 4rem;
+}
+@media (min-width: 768px) {
+  .tickets h3 {
+    font-size: 4.2rem;
+  }
 }
 .tickets .ticket-container {
   margin-bottom: 5rem;

@@ -185,6 +185,7 @@ function darkModeToggle() {
 
 function hamburgerMenuContent() {
 	const hamburger = document.querySelector('#hamburger')
+	let menuOpen = false
 	const principalNavigation = document.querySelector('.principal-navigation')
 
 	const aboutFestival = document.querySelector('.about-festival')
@@ -192,6 +193,14 @@ function hamburgerMenuContent() {
 
 	hamburger.addEventListener('click', () => {
 		principalNavigation.classList.toggle('show')
+
+		if (!menuOpen) {
+			hamburger.classList.add('open')
+			menuOpen = true
+		} else {
+			hamburger.classList.remove('open')
+			menuOpen = false
+		}
 
 		window.addEventListener('scroll', () => {
 			if (aboutFestival.getBoundingClientRect().bottom < 0 && principalNavigation.classList.contains('show')) {

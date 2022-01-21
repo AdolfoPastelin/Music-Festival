@@ -352,21 +352,7 @@ body {
   font-size: 1.6rem;
   font-family: "Fira Sans", sans-serif;
 }
-body.fixBody {
-  overflow: hidden;
-}
-body.scroll-body {
-  padding-top: 10.7rem;
-}
-body.fixed-show {
-  padding-top: 23.3rem;
-}
 
-@media (min-width: 768px) {
-  body.fixed-show {
-    padding-top: 10.7rem;
-  }
-}
 h1 {
   font-family: "Festive", cursive;
   font-size: 5rem;
@@ -475,13 +461,6 @@ img {
 
 .header {
   background-color: #07013c;
-}
-.header.fixed {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
 }
 .header .header-content {
   display: flex;
@@ -617,6 +596,14 @@ img {
   .principal-navigation.show {
     flex-direction: row;
   }
+}
+
+.sticky {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
 }
 
 .video-container {

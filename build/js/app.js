@@ -11,19 +11,28 @@ function initApp() {
 }
 
 function fixedNavigation() {
-	const bar = document.querySelector('.header')
-	const aboutFestival = document.querySelector('.about-festival')
-	const body = document.querySelector('body')
+	const main = document.querySelector('main')
+	const header = document.querySelector('.header')
+	const headerHeight = header.getBoundingClientRect().height
 
-	window.addEventListener('scroll', () => {
-		if (aboutFestival.getBoundingClientRect().bottom < 0) {
-			bar.classList.add('fixed')
-			body.classList.add('scroll-body')
+	const mainFunction = (entries) => {
+		const [entry] = entries
+
+		if (!entry.isIntersecting) {
+			header.classList.add('sticky')
 		} else {
-			bar.classList.remove('fixed')
-			body.classList.remove('scroll-body')
+			header.classList.remove('sticky')
 		}
-	})
+	}
+
+	const mainOptions = {
+		root: null,
+		rootMargin: `-${headerHeight}px`,
+		threshold: 0
+	}
+
+	const mainObserver = new IntersectionObserver(mainFunction, mainOptions)
+	mainObserver.observe(main)
 }
 
 function scrollNav() {
@@ -118,8 +127,6 @@ function darkModeToggle() {
 	const stagesNames = document.querySelectorAll('.stage-name')
 	const packageTitles = document.querySelectorAll('.package-title')
 	const packageItems = document.querySelectorAll('.package-body > ul > li')
-
-	console.log(dates)
 
 	// Dynamic creation of picture -> source x2 -> img
 	if (!body.classList.contains('dark-mode-body')) {

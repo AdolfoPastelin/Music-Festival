@@ -15,24 +15,6 @@ html {
 body {
 	font-size: 1.6rem;
 	font-family: v.$mainFont;
-
-	&.fixBody {
-		overflow: hidden;
-	}
-
-	&.scroll-body {
-		padding-top: 10.7rem;
-	}
-
-	&.fixed-show {
-		padding-top: 23.3rem;
-	}
-}
-
-@include m.tabletSize {
-	body.fixed-show {
-		padding-top: 10.7rem;
-	}
 }
 
 h1 {

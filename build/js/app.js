@@ -1,3 +1,5 @@
+'use strict'
+
 document.addEventListener('DOMContentLoaded', function () {
 	initApp()
 })
@@ -8,6 +10,7 @@ function initApp() {
 	scrollNav()
 	darkModeToggle()
 	hamburgerMenuContent()
+	revealElementsOnScroll()
 }
 
 function fixedNavigation() {
@@ -208,5 +211,31 @@ function hamburgerMenuContent() {
 				body.classList.remove('fixed-show')
 			}
 		})
+	})
+}
+
+function revealElementsOnScroll() {
+
+	const allSections = document.querySelectorAll('section')
+
+	const revealSections = (entries, observer) => {
+		const [entry] = entries
+
+		//? Guard clause
+		if (!entry.isIntersecting) return
+
+		entry.target.classList.remove('section--hidden')
+		observer.unobserve(entry.target)
+	}
+
+	const sectionOptions = {
+		root: null,
+		threshold: 0.1
+	}
+
+	const sectionObserver = new IntersectionObserver(revealSections, sectionOptions)
+	allSections.forEach(section => {
+		sectionObserver.observe(section)
+		section.classList.add('section--hidden')
 	})
 }

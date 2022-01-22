@@ -59,3 +59,13 @@ img {
 	display: block;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
+
+// Animation styles
+section {
+	transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+	opacity: 0;
+	transform: translateY(15rem);
+}

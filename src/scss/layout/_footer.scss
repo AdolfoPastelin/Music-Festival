@@ -53,7 +53,8 @@
 }
 
 .footer-logo {
-	h1 {
+	h2 {
+		font-family: v.$titleFont;
 		color: v.$white;
 		display: block;
 		margin: 0;

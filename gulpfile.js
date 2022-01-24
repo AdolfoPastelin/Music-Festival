@@ -4,6 +4,7 @@ const { src, dest, watch, parallel } = require('gulp')
 const sass = require('gulp-sass')(require('sass'))
 const plumber = require('gulp-plumber')
 const postcss = require('gulp-postcss')
+const sourcemaps = require('gulp-sourcemaps')
 
 //PostCSS
 const cssnano = require('cssnano')
@@ -16,20 +17,28 @@ const webp = require('gulp-webp')
 const avif = require('gulp-avif')
 const resizer = require('gulp-images-resizer')
 
+// JS
+const terser = require('gulp-terser-js')
+
 //* Gulp functions
 
 /* Compiles SCSS files to CSS file */
 function css(done) {
 	src('src/scss/**/*.scss') //Identifies the .scss file to compile.
+		.pipe(sourcemaps.init())
 		.pipe(plumber()) //Avoid gulp execution interruption when a compilation error ocurrs.
 		.pipe(sass()) // Compile the file.
 		.pipe(postcss([autoprefixer, cssnano()])) // add prefixes and minify the code.
+		.pipe(sourcemaps.write('.')) // "." means the same route as the dest path.
 		.pipe(dest('build/css')) // Stores the compiled files.
 	done()
 }
 
 function js(done) {
 	src('src/js/**/*.js')
+		.pipe(sourcemaps.init()) // Initialize sourcemap creation.
+		.pipe(terser()) // minify the code.
+		.pipe(sourcemaps.write('.')) // "." means the same route as the dest path.
 		.pipe(dest('build/js'))
 	done()
 }

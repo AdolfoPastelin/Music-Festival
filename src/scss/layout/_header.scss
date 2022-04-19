@@ -3,6 +3,7 @@
 
 .header {
 	background-color: v.$darkBlue;
+	z-index: 100;
 
 	.header-content {
 		display: flex;

@@ -2,7 +2,6 @@
 	"name": "music-festival",
 	"version": "1.0.0",
 	"description": "temporal project description...",
-	"main": "index.js",
 	"scripts": {
 		"sass": "sass --watch src/scss:build/css"
 	},

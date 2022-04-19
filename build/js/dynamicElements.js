@@ -1,0 +1,2 @@
+export default function revealElementsOnScroll(){const e=document.querySelectorAll("section"),t=new IntersectionObserver((e,t)=>{const[s]=e;s.isIntersecting||e.forEach(e=>{e.target.classList.remove("section--hidden")}),s.target.classList.remove("section--hidden"),t.unobserve(s.target)},{root:null,threshold:.1});e.forEach(e=>{t.observe(e),e.classList.add("section--hidden")})}
+//# sourceMappingURL=dynamicElements.js.map

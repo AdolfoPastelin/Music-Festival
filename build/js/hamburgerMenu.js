@@ -1,0 +1,2 @@
+export default function hamburgerMenuContent(){const e=document.querySelector("#hamburger"),t=document.querySelector(".principal-navigation"),o=document.querySelector(".about-festival"),s=document.querySelector("body");e.addEventListener("click",()=>{e.classList.toggle("open"),t.classList.toggle("show"),window.addEventListener("scroll",()=>{o.getBoundingClientRect().bottom<0&&t.classList.contains("show")?s.classList.add("fixed-show"):s.classList.remove("fixed-show")})})}
+//# sourceMappingURL=hamburgerMenu.js.map

@@ -22,9 +22,9 @@ export default function createGallery() {
 function showImage(id) {
 	const image = document.createElement('picture')
 	image.innerHTML = `
-			<source srcset="build/img/large/${id}.avif" type="image/avif">
-			<source srcset="build/img/large/${id}.webp" type="image/webp">
-			<img loading="lazy" width="200" height="200" src="build/img/large/${id}.jpg"
+			<source srcset="build/img/large/${id}.avif" type="image/avif" class="showing">
+			<source srcset="build/img/large/${id}.webp" type="image/webp" class="showing">
+			<img loading="lazy" width="200" height="200" src="build/img/large/${id}.jpg" class="showing"
 			alt="Gallery image ${id}">
 		`
 
